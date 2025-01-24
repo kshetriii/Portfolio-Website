@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: black; */
+    font-family: Arial;
+}
+
+.portfolio-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: white;
+    position: relative;
+}
+
+/** this is for simple hover **/  
+/**
+.navlist li a:hover {
+    text-decoration: underline;
+} 
+**/
+
+
+.navlist li a::after, .navlist .active::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: .1rem;
+    bottom: -4px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .5s;
+}
+
+.navlist li a:hover::after, .navlist .active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.left-container, .right-container {            /** similar codes of two divs can be wrttien as **/
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.left-container {
+    padding-left: 3rem;
+    width: 70%;
+    background-color: black; 
+}
+  
+.right-container {
+    width: 30%;
+    background: linear-gradient(-45deg,blue, black 70%); 
+}
+
+.icons .fa-brands{
+    font-size: 30px;
+    color: white;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.content {
+    margin-top: 6rem;
+    margin-left: 4rem;
+}
+
+.content .intro{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.content .intro span {
+    color: #2455e6;
+    font-weight: 700;
+}
+.content h1 {
+    font-size: 4rem;
+    color: #2455e6;
+}
+
+.content .details {
+    margin: 1.3rem 0 3rem 0;
+    font-size: 1.1rem;
+    color: white;
+    max-width: 38rem;
+    line-height: 1.8rem;
+}
+
+.btn-container button {
+    border: .1rem solid  #2455e6;
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+button:nth-child(1) {           /** this is to know which button is being talked about as both of them are known as button **/
+    background:  #2455e6;
+    color: black;
+}
+
+button:nth-child(2){
+    background: transparent;
+    color: #2455e6;
+    margin-left: 2rem;
+}
+
+button:nth-child(1):hover {  
+    background: transparent;
+    color:  #2455e6;
+}
+
+button:nth-child(2):hover {  
+    background:  #2455e6;
+    color: black;
+}
+
+.icons .fa-brands:hover {
+    cursor: pointer;
+    background: linear-gradient(white,blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, black 50%);
+    width: 38rem;
+
+}
+
+.circle:nth-child(2) {
+    background: white;
+    background-image: url("image/bio data photo.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30rem;
+    border: 0.5rem solid white;
+    box-shadow:
+    0 0 1rem white,
+    inset 0 0 1rem white,
+    0 0 2rem blue,
+    inset 0 0 2rem blue,
+    0 0 4rem blue,
+    inset 0 0 4rem blue;
+}
